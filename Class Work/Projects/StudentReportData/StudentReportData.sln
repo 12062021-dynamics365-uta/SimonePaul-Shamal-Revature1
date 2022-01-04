@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentReportData", "StudentReportData\StudentReportData.csproj", "{83889BA6-5219-4A4A-B25C-C51119418B86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF98807A-CB22-476B-AF86-64D424A64F1A}"
+	ProjectSection(SolutionItems) = preProject
+		Web.config = Web.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83889BA6-5219-4A4A-B25C-C51119418B86}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{83889BA6-5219-4A4A-B25C-C51119418B86}.Debug|anycpu.Build.0 = Debug|anycpu
+		{83889BA6-5219-4A4A-B25C-C51119418B86}.Release|anycpu.ActiveCfg = Release|anycpu
+		{83889BA6-5219-4A4A-B25C-C51119418B86}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {083444F8-E746-4750-BF65-7DFDA9C2FB95}
+	EndGlobalSection
+EndGlobal
