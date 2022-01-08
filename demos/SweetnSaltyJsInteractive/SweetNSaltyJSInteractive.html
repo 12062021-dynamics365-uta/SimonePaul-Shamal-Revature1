@@ -1,0 +1,206 @@
+
+<!-- /*
+ * Class Assignment:
+ *
+ *   DOM Group Work:
+ * - prevent from adding a blank todo.
+ * - implement a character limit and alert the user that there were too
+ *   many chars.
+ * - make it so that you can simply type enter to submit the new todo.
+ * - Add an input that allows you to change the title of the todo list.
+ * - Group work credit to Kevin and Bishal
+ **/-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width= , initial-scale=1.0">
+     
+     <style>
+         
+ img{
+         border-radius: 8px;
+         margin-left: 25%;
+         margin-right: auto;
+         width: 50%;
+         display: block;
+ 
+     }
+ body
+    {
+        background-color: red;
+    }
+    p
+    {
+        
+        text-align: center;
+        color:white;
+        font-family: cursive;
+    }
+    #GameRules
+    {   
+        
+        color: white;
+        font-family: cursive;
+    }
+    button
+    { 
+         border-radius: 8px;
+         margin-left: 25%;
+         margin-right: auto;
+         width: 50%;
+         display: block;
+        background-color: green;
+        color: white;
+    }
+     </style>
+     <title>Sweet-n-Salty InteractiveJS</title>
+ </head>
+ <body>
+     <img src="SweetnSaltyJs2.gif" id="SweetnSaltyJs" />
+    
+     <script>
+         // creates the title to display to webpage
+         let gameName = document.createElement('p');//Title
+         //add the title to the body of the page
+         document.body.appendChild(gameName);
+         gameName.innerText = `Sweet-N-Salty Interactive JS`;
+     </script>
+  
+     <div id = "GameRules">
+     Sweet -n- Salty JS is interactive Webpage. To interact with this webpage
+     please for these instructions. 1. Please enter a "Start" number, then press enter.
+     2. Please enter a end number, then press enter. Once you completed thoses steps
+     The webpage will print out positive integers within the range of numbers
+     entered "Start" and "End" numbers.(Please note that we require you to enter
+     one number then press the enter key and repeat for the second number.
+     These numbers must be at least 200 integers apart and no more than 10,000
+     apart. Thank you hope you enjoy....
+     </div>
+     
+     <script>
+         // create the submit element
+         let startbutton = document.createElement('button');
+         //add the element to the body
+         document.body.appendChild(startbutton);
+         startbutton.innerText = 'Play Game!';
+ 
+         //create the eventlistener  to get user input
+         startbutton.addEventListener('click', (e) => {
+             
+             // Prompt the user to enter a number.
+             let userInput1 = document.createElement('p');
+             userInput1.innerText = 'Please enter a "Start" number! ';
+             document.body.appendChild(userInput1);
+             
+             //create input box for user to input number
+             let inputbox1 = document.createElement('input');
+             //need to add user input is validation to ensure only positive integers are entered
+             document.body.appendChild(inputbox1);
+             
+             let inputbox2 = document.createElement('input');
+             
+             let playAgain = document.createElement('button');//validate //need to add user input is validation to ensure only positive integers are entereds
+             inputbox1.addEventListener('keypress',(e)=>{
+                if(e.key=='Enter')
+                 {
+                     var InputValue1 = inputbox1.value;
+                     let userInput2 = document.createElement('p');
+                     userInput2.innerText = 'Please enter "End" number! ';
+                     document.body.appendChild(userInput2);
+                     //this code appends the elements to a page to be used
+                     document.body.appendChild(inputbox2);
+                     
+                 }
+                 inputbox2.addEventListener('keypress',(e)=>{
+                 if(e.key=='Enter')
+                 {
+                     //assign values of inputelem and inputelem2 to var
+                     //convert those var into int type
+                     var num1 = inputbox1.value;
+                     parseInt(num1);
+                     var num2 = inputbox2.value;
+                     parseInt(num2);
+                     //if the finishing number is registered displays the reset button on the body of HTML
+                     document.body.appendChild(playAgain);
+                     playAgain.innerText = 'Click to Play Again!!!';
+                     //reloads the page--thanks to Dan the man!
+                     playAgain.addEventListener('click',(e)=>{
+                     location.reload();
+                     });
+                     
+                     //set up the for loop iterating over the two values(starting# & finishing number)
+                     let SweetNSalty = 0;
+                     let Salty = 0;
+                     let Sweet = 0;
+                     var const_ENum = 10000;
+                     var const_SNum = 200;
+                     parseInt(const_SNum);
+                     parseInt(const_ENum);
+                     var numbers = new Array();
+                                                       
+                                              
+ 
+ 
+                     //Number startng at 1 and goes to 1000 by incrementing by single number.
+                     for (var i = num1; i <= num2; i++)
+                     {
+                         if (num2-num1 <const_SNum || num2-num1 >const_ENum ||num2 < num1){
+                             console.log("Invalid!!!! Please see instructions above.");
+                         }
+                         //if multiple of both 3 and 5 returns SweetNSalty
+                         else if (i % 3 == 0 && i % 5 == 0)
+                         {
+                             //appends the string value and pushes it as the new value if the expression is true
+                             numbers.push("SweetNSalty" + " ");
+                             SweetNSalty++;
+                         }
+ 
+                         ///if multiple of 5 returns sweet and appens to the count
+                         else if (i % 5 == 0)
+                         {
+                             numbers.push("Salty, " + " ");
+                             Salty++;
+                         }
+ 
+                         //if multiple of 3 returns sweet and appens to the count
+                         else if (i % 3 == 0)
+                         {
+                             numbers.push("Sweet, " + " ");
+                             Sweet++;
+                         }
+ 
+                         //Any other numbers will count as numbers.
+                         else
+                         {
+                             numbers.push(i + " ");
+                         }
+ 
+                         //Every 40 numbers will seperate the group.
+                         if (i % 40 == 0)
+                         {
+                             //breaks the array if the expression is true and starts a new array
+                             console.log(numbers.toString());
+                             numbers = [];
+                         }
+                         //if statement for commas
+                         
+                         
+                     }
+                     //Count how many time were printed by each.
+                     console.log("Total number of times SweetNSalty was printed: " + SweetNSalty);
+                     console.log("Total number of times Salty was printed: " + Salty);
+                     console.log("Total number of times Sweet was printed: " + Sweet);
+                 }
+ 
+             });
+         });
+               
+     });
+        
+</script></body>
+ </html>
+ 
+ 
