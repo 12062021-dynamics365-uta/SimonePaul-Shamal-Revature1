@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="MySql.Data" Version="8.0.27" />
+    <PackageReference Include="MySqlConnector" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="MySql.Data" />
+    <None Remove="MySqlConnector" />
+  </ItemGroup>
+</Project>
